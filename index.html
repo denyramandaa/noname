@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chattering</title>
+  <link rel="stylesheet" href="../_core/css/swiper.min.css">
+  <link rel="stylesheet" href="../_core/css/tailwind.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <section id="app">
+    {# start:header #}
+    <header class="header fixed top-0 left-0 z-40 w-full px-6 lg:px-0">
+      <div class="max-w-6xl mx-auto flex justify-between py-12">
+        <div class="logo"><img src="assets/icon/logo.png" alt="logo"></div>
+        <div class="justify-center items-center hidden lg:flex">
+          <div v-for="i in menus" class="px-4">
+            <a :href="i.url" class="capitalize txt-shadow text-white">{{ i.name }}</a>
+          </div>
+        </div>
+        <div class="burger-menu block lg:hidden" @click="openMenu = true">
+          <img src="assets/icon/burger.png" alt="burger-icon">
+        </div>
+      </div>
+    </header>
+    {# end:header #}
+
+    {# start:side-menu #}
+    <section class="side-menu fixed right-0 top-0 w-4/6 z-50 block lg:hidden" :class="{ 'show' : openMenu }">
+      <div class="relative min-h-screen flex items-center mx-8">
+        <div class="close-menu absolute right-0" @click="openMenu = false">
+          <img src="assets/icon/close.png" alt="close-icon">
+        </div>
+        <div class="w-full">
+            <div class="logo mb-6"><img src="assets/icon/logo.png" alt="logo"></div>
+            <div v-for="(i, key) in menus" class="text-center" :class="{ 'border-b' : key != menus.length-1 }">
+              <a :href="i.url" class="capitalize text-white block w-full py-6">{{ i.name }}</a>
+            </div>
+        </div>
+      </div>
+    </section>
+    {# end:side-menu #}
+
+    {# start:jumbotron #}
+    <section class="jumbotron bg-white w-full">
+      <div class="swiper-container swiper--jumbotron absolute left-0 top-0 h-full w-full">
+        <div class="swiper-wrapper">
+          <div v-for="i in jumbotronImage" class="swiper-slide min-h-screen w-full bg-cover bg-center" :style="{ 'background-image': 'url(assets/img/' + i + ')' }"></div>
+        </div>
+      </div>
+      <div class="min-h-screen max-w-6xl mx-auto relative z-5">
+        <div class="absolute max-w-sm title-wrapper px-8 lg:px-0 text-center md:text-left">
+          <h1 class="text-5xl lg:text-6xl font-lora text-white lg:leading-tight txt-shadow">Happy Bites, Happy Vibes!</h1>
+          <p class="text-base lg:text-lg text-white mt-4 lg:mt-8 txt-shadow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          <a href="#" class="rounded uppercase text-white px-8 py-1 mt-4 lg:mt-8 inline-block border-white border txt-shadow">OUR MENU</a>
+        </div>
+        <div class="absolute button-wrapper flex justify-center w-full md:justify-start px-8 lg:px-0">
+          <div class="jumbotron--prev mr-2 cursor-pointer"></div>
+          <div class="jumbotron--next cursor-pointer"></div>
+        </div>
+        <div class="absolute pagination-wrapper w-full flex justify-center">
+            <div class="jumbotron--pagination"></div>
+        </div>
+      </div>
+    </section>
+    {# end:jumbotron #}
+
+    
+  </section>
+
+  <script src="../_core/js/vue.min.js"></script>
+  <script src="../_core/js/swiper.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
