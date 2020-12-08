@@ -11,9 +11,8 @@
 </head>
 <body>
   <section id="app">
-    {# start:header #}
-    <header class="header fixed top-0 left-0 z-40 w-full px-6 lg:px-0">
-      <div class="max-w-6xl mx-auto flex justify-between py-12">
+    <header class="header fixed top-0 left-0 z-40 w-full px-6 lg:px-0" :class="{ 'active' : scrolled }">
+      <div class="max-w-6xl mx-auto flex justify-between py-12 thi">
         <div class="logo"><img src="assets/icon/logo.png" alt="logo"></div>
         <div class="justify-center items-center hidden lg:flex">
           <div v-for="i in menus" class="px-4">
@@ -25,9 +24,7 @@
         </div>
       </div>
     </header>
-    {# end:header #}
 
-    {# start:side-menu #}
     <section class="side-menu fixed right-0 top-0 w-4/6 z-50 block lg:hidden" :class="{ 'show' : openMenu }">
       <div class="relative min-h-screen flex items-center mx-8">
         <div class="close-menu absolute right-0" @click="openMenu = false">
@@ -41,9 +38,7 @@
         </div>
       </div>
     </section>
-    {# end:side-menu #}
 
-    {# start:jumbotron #}
     <section class="jumbotron bg-white w-full">
       <div class="swiper-container swiper--jumbotron absolute left-0 top-0 h-full w-full">
         <div class="swiper-wrapper">
@@ -65,9 +60,160 @@
         </div>
       </div>
     </section>
-    {# end:jumbotron #}
 
-    
+    <section class="bg-white w-full pt-24">
+      <div class="max-w-6xl mx-auto">
+        <div class="w-full text-center relative">
+          <h2 class="font-bold text-2xl relative inline-block sub-title txt-grey">About Us</h2>
+        </div>
+        <div class="lg:flex mt-8 lg:mt-12 lg:-mx-4">
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-0 lg:px-4">
+            <span class="font-pt txt-white-grey text-lg lg:text-xl">Speciality of the kitchen</span>
+            <h3 class="font-bold font-lora txt-grey text-4xl mt-2">Discover Our Tasty Meals</h3>
+            <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="rounded uppercase px-8 py-1 mt-6 lg:mt-8 inline-block border-gray-400 border txt-grey font-bold">DISCOVER MENU</a>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-0 lg:px-4">
+            <img src="assets/img/02.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Our History</h4>
+            <p class="mt-4 txt-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-0 lg:px-4">
+            <img src="assets/img/03.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Our Philosophy</h4>
+            <p class="mt-4 txt-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full lg:flex pt-24">
+      <div class="lg:w-1/3">
+        <img class="w-full" src="assets/img/05.jpg" alt="product">
+      </div>
+      <div class="lg:w-1/3 flex relative justify-center items-center overlay-yellow">
+        <img class="w-full left-0 top-0" src="assets/img/07.jpg" alt="product">
+        <div class="absolute px-8 lg:px-0 lg:w-2/3 z-2 text-center">
+          <h3 class="font-bold font-lora text-white text-4xl">Art of Food</h3>
+          <p class="mt-4 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          <a href="#" class="rounded uppercase px-8 py-1 mt-6 lg:mt-8 inline-block border-white border text-white font-bold">ORDER NOW</a>
+        </div>
+      </div>
+      <div class="lg:w-1/3">
+        <img class="w-full" src="assets/img/06.jpg" alt="product">
+      </div>
+    </section>
+
+    <section class="bg-white w-full pt-24">
+      <div class="max-w-6xl mx-auto">
+        <div class="w-full text-center relative">
+          <h2 class="font-bold text-2xl relative inline-block sub-title txt-grey">Our Product</h2>
+        </div>
+        <div class="lg:flex mt-8 lg:mt-12 lg:-mx-4 flex-wrap">
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-8 lg:px-4">
+            <img src="assets/img/04.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Lorem Ipsum</h4>
+            <p class="mt-4 txt-grey mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="underline txt-yellow-gold text-lg font-bold">Order via Whatsapp</a>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-8 lg:px-4">
+            <img src="assets/img/09.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Lorem Ipsum</h4>
+            <p class="mt-4 txt-grey mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="underline txt-yellow-gold text-lg font-bold">Order via Whatsapp</a>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-8 lg:px-4">
+            <img src="assets/img/08.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Lorem Ipsum</h4>
+            <p class="mt-4 txt-grey mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="underline txt-yellow-gold text-lg font-bold">Order via Whatsapp</a>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-8 lg:px-4">
+            <img src="assets/img/08.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Lorem Ipsum</h4>
+            <p class="mt-4 txt-grey mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="underline txt-yellow-gold text-lg font-bold">Order via Whatsapp</a>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-8 lg:px-4">
+            <img src="assets/img/04.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Lorem Ipsum</h4>
+            <p class="mt-4 txt-grey mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="underline txt-yellow-gold text-lg font-bold">Order via Whatsapp</a>
+          </div>
+          <div class="lg:w-1/3 px-6 mb-12 lg:mb-8 lg:px-4">
+            <img src="assets/img/09.jpg" alt="product">
+            <h4 class="text-2xl mt-4 font-lora font-bold txt-grey">Lorem Ipsum</h4>
+            <p class="mt-4 txt-grey mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+            <a href="#" class="underline txt-yellow-gold text-lg font-bold">Order via Whatsapp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white w-full pt-24">
+      <div class="max-w-6xl mx-auto">
+        <div class="w-full text-center relative">
+          <h2 class="font-bold text-2xl relative inline-block sub-title txt-grey">Why Us?</h2>
+        </div>
+        <div class="flex flex-wrap mt-8 lg:mt-16 lg:-mx-4">
+          <div class="w-2/4 lg:w-1/4 text-center px-4 mb-12">
+            <img class="w-2/3 lg:w-1/3 mx-auto" src="assets/icon/01.png" alt="icon">
+            <h3 class="font-lora font-bold txt-grey mt-4 lg:mt-12 text-xl">Lorem Ipsum</h3>
+            <p class="txt-grey mt-2 text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          </div>
+          <div class="w-2/4 lg:w-1/4 text-center px-4 mb-12">
+            <img class="w-2/3 lg:w-1/3 mx-auto" src="assets/icon/02.png" alt="icon">
+            <h3 class="font-lora font-bold txt-grey mt-4 lg:mt-12 text-xl">Lorem Ipsum</h3>
+            <p class="txt-grey mt-2 text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          </div>
+          <div class="w-2/4 lg:w-1/4 text-center px-4 mb-12">
+            <img class="w-2/3 lg:w-1/3 mx-auto" src="assets/icon/03.png" alt="icon">
+            <h3 class="font-lora font-bold txt-grey mt-4 lg:mt-12 text-xl">Lorem Ipsum</h3>
+            <p class="txt-grey mt-2 text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          </div>
+          <div class="w-2/4 lg:w-1/4 text-center px-4 mb-12">
+            <img class="w-2/3 lg:w-1/3 mx-auto" src="assets/icon/04.png" alt="icon">
+            <h3 class="font-lora font-bold txt-grey mt-4 lg:mt-12 text-xl">Lorem Ipsum</h3>
+            <p class="txt-grey mt-2 text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque at neque duis orci morbi vestibulum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white w-full pt-24 min-h-screen">
+      <div class="max-w-6xl mx-auto">
+        <div class="w-full text-center relative">
+          <h2 class="font-bold text-2xl relative inline-block sub-title txt-grey">Our Gallery?</h2>
+        </div>
+      </div>
+      <div class="flex flex-wrap mt-8 lg:mt-12 w-full">
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/05.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/06.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/06.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/05.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/06.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/06.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/06.jpg" alt="product">
+        </div>
+        <div class="w-2/4 lg:w-1/4">
+          <img class="w-full" src="assets/img/06.jpg" alt="product">
+        </div>
+      </div>
+    </section>
+
   </section>
 
   <script src="../_core/js/vue.min.js"></script>

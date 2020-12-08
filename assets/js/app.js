@@ -24,7 +24,8 @@ new Vue({
       name: 'contact us',
       url: '#'
     }],
-    openMenu: false
+    openMenu: false,
+    scrolled: false
   },
   methods:{
     initSwiper(){
@@ -51,10 +52,19 @@ new Vue({
           }
       });
     },
+    registScroll: function (){
+      window.scrollY  > document.getElementsByClassName('jumbotron')[0].clientHeight/2 ? this.scrolled = true : this.scrolled = false
+    },
   },
   mounted(){
     this.$nextTick(function(){
       this.initSwiper();
     });
+  },
+  created(){
+    window.addEventListener('scroll', this.registScroll);
+  },
+  beforeDestroy(){
+    window.removeEventListener('scroll', this.registScroll);
   }
 });
