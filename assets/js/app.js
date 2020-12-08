@@ -4,7 +4,7 @@ Vue.config.devtools = true;
 new Vue({
   el: '#app',
   data:{
-    jumbotronImage: ['01.jpg','02.jpg','03.jpg','04.jpg'],
+    jumbotronImage: ['01.jpg','hd2.jpg','hd3.jpg','hd4.jpg'],
     menus: [{
       name: 'about us',
       url: '#'

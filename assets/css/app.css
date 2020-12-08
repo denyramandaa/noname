@@ -6,6 +6,9 @@
   font-family: 'Ptsans';
   src:  url('../../../_core/font/PTSans-Regular.ttf') format('ttf');
 }
+img {
+  width: 100%;
+}
 header {
   transition: background-color .5s linear;
 }
@@ -135,6 +138,9 @@ header.active .thi{
   height: 100%;
   background-color: rgb(179 154 98 / 75%);
   z-index: 1;
+}
+.rating {
+  width: 20px;
 }
 @media screen and (min-width: 1025px) {
   .jumbotron::before{
