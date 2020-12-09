@@ -25,8 +25,8 @@
         </div>
       </div>
     </header>
-
-    <section class="side-menu fixed right-0 top-0 w-4/6 z-50 block lg:hidden" :class="{ 'show' : openMenu }">
+    <section class="overlay-side min-h-screen fixed top-0 left-0 z-50 w-full" v-if="openMenu" @click="openMenu = false"></section>
+    <section class="side-menu fixed right-0 top-0 z-50 block lg:hidden w-4/6 bg-yellow-gold" :class="{ 'show' : openMenu }">
       <div class="relative min-h-screen flex items-center mx-8">
         <div class="close-menu absolute right-0" @click="openMenu = false">
           <img src="assets/icon/close.png" alt="close-icon">
