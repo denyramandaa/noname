@@ -1,10 +1,5 @@
-@font-face {
-  font-family: 'Lora';
-  src:  url('../../../_core/font/Lora-VariableFont_wght.ttf') format('ttf');
-}
-@font-face {
-  font-family: 'Ptsans';
-  src:  url('../../../_core/font/PTSans-Regular.ttf') format('ttf');
+body {
+  font-family: 'PT Sans', sans-serif;
 }
 img {
   width: 100%;
@@ -28,10 +23,7 @@ header.active .thi{
   z-index: 5;
 }
 .font-lora {
-  font-family: 'Lora';
-}
-.font-pt-sans {
-  font-family: 'Ptsans';
+  font-family: 'Lora', serif; 
 }
 .jumbotron::before {
   content: '';
@@ -142,6 +134,27 @@ header.active .thi{
 .rating {
   width: 20px;
 }
+footer {
+  background-color: #92783D;
+}
+.btnhov {
+  transition: all .3s linear;
+}
+.btnhov:hover {
+  background-color: rgb(255 255 255 / 25%);
+}
+.chatus {
+  bottom: 0;
+  right: 8px;
+  background-color: #33BB47;
+  border-radius: 1em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 8px 20px 8px;
+}
+.chatus img {
+  width: 28px;
+}
 @media screen and (min-width: 1025px) {
   .jumbotron::before{
     width: 50%;
@@ -154,5 +167,12 @@ header.active .thi{
   }
   .sub-title::after {
     right: -150%;
+  }
+  .chatus {
+    right: 16px;
+    padding: 8px 32px 8px;
+  }
+  .chatus img {
+    width: 32px;
   }
 }

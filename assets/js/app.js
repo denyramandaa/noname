@@ -7,22 +7,22 @@ new Vue({
     jumbotronImage: ['01.jpg','hd2.jpg','hd3.jpg','hd4.jpg'],
     menus: [{
       name: 'about us',
-      url: '#'
+      url: 'about-us'
     },{
       name: 'our product',
-      url: '#'
+      url: 'our-product'
     },{
       name: 'why us?',
-      url: '#'
+      url: 'why-us'
     },{
       name: 'gallery',
-      url: '#'
+      url: 'our-gallery'
     },{
       name: 'articles',
-      url: '#'
+      url: 'articles'
     },{
       name: 'contact us',
-      url: '#'
+      url: 'contact-us'
     }],
     openMenu: false,
     scrolled: false
@@ -55,6 +55,13 @@ new Vue({
     registScroll: function (){
       window.scrollY  > document.getElementsByClassName('jumbotron')[0].clientHeight/2 ? this.scrolled = true : this.scrolled = false
     },
+    gointTo(a) {
+      window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: document.getElementById(a).offsetTop - 50
+      })
+    }
   },
   mounted(){
     this.$nextTick(function(){
