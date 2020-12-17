@@ -157,6 +157,9 @@ footer {
 .btnhov:hover {
   background-color: rgb(255 255 255 / 25%);
 }
+.nav-text:hover {
+  border-color: white;
+}
 .chatus {
   bottom: 0;
   right: 8px;
@@ -168,6 +171,45 @@ footer {
 }
 .chatus img {
   width: 28px;
+}
+.gallery-img {
+  position: relative;
+  cursor: pointer;
+}
+.gallery-img::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: rgb(2 2 2 / 32%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all .3s linear;
+}
+.gallery-img::after {
+  content: 'VIEW';
+  font-family: 'Lora', sans-serif;
+  position: absolute;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 14px;
+  padding: 4px 8px;
+  width: 85%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 2px;
+  opacity: 0;
+  transition: all .3s linear;
+  transition-delay: .15s;
+}
+.gallery-img:hover::before, .gallery-img:hover::after {
+  opacity: 1;
 }
 @media screen and (min-width: 1025px) {
   .jumbotron::before{
